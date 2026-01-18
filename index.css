@@ -14,9 +14,11 @@ body {
 }
 
 .navbar {
-    background: rgba(12, 11, 20, 0.50) !important;
+    background: rgba(12, 11, 20, 0);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.0);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+    will-change: background, box-shadow;
 }
 
 .navbar-brand {
