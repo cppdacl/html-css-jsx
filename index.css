@@ -151,6 +151,55 @@ body {
     background-color: #0c0b14;
 }
 
+.contact-form {
+    background: #12121f;
+    padding: 28px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.contact-form .form-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #9a9ab8;
+}
+
+.contact-form .form-control {
+    background: #0c0b14;
+    border: 1px solid #1c1a30;
+    color: #e5e5e5;
+    font-size: 0.85rem;
+    padding: 10px 12px;
+    border-radius: 6px;
+}
+
+.contact-form .form-control::placeholder {
+    color: #5f5c7a;
+}
+
+.contact-form .form-control:focus {
+    background: #0c0b14;
+    color: #ffffff;
+    border-color: #690dfd;
+    box-shadow: 0 0 0 2px rgba(105, 13, 253, 0.15);
+}
+
+.contact-btn {
+    background: #ffffff;
+    color: #000;
+    font-weight: 600;
+    font-size: 0.8rem;
+    padding: 8px 18px;
+    border-radius: 6px;
+    border: none;
+    transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.contact-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
 footer {
     background: #000000;
     color: rgb(78, 80, 104);
