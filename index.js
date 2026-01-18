@@ -71,12 +71,16 @@ document.addEventListener('DOMContentLoaded', () => {
 const projectButtons = document.querySelectorAll('.proj-action-btn');
 
 projectButtons.forEach(button => {
-  button.addEventListener('click', () => {
+  button.addEventListener('click', e => {
+    e.preventDefault();
+
     const card = button.closest('.portfolio-card');
+
     const title = card.querySelector('h5').textContent;
-    const description = card.querySelector('p').textContent;
-    const techTags = Array.from(card.querySelectorAll('.tech-tags span'))
-                         .map(span => span.textContent);
+    const description = card.dataset.description || '';
+    const techTags = card.dataset.tech || '';
+    const links = card.dataset.links || '';
+    const additional = card.dataset.additional || '';
 
     const overlay = document.createElement('div');
     overlay.className = 'modal-overlay';
@@ -96,8 +100,11 @@ projectButtons.forEach(button => {
 
     const body = document.createElement('div');
     body.className = 'modal-body';
-    body.innerHTML = `<p>${description}</p><p><strong>Tech:</strong> ${
-        techTags.join(', ')}</p>`;
+    body.innerHTML = `
+        <p>${description}</p>
+        ${techTags ? `<p><strong>Tech:</strong> ${techTags}</p>` : ''}
+        ${additional ? `<p>${additional}</p>` : ''}
+    `;
     modal.appendChild(body);
 
     overlay.appendChild(modal);
@@ -116,5 +123,47 @@ projectButtons.forEach(button => {
         setTimeout(() => overlay.remove(), 300);
       }
     });
+  });
+});
+
+const portfolioCards = document.querySelectorAll('.portfolio-card');
+const portfolioSection = document.querySelector('#portfolio');
+
+const colors = {
+  'Nomikai': 'rgba(105, 13, 253, 0.1)',
+  'Prism': 'rgba(0, 200, 200, 0.1)',
+  'Arcane': 'rgba(255, 165, 0, 0.1)'
+};
+
+const hoverColors = {
+  'Nomikai': 'rgba(105, 13, 253, 0.05)',
+  'Prism': 'rgba(0, 200, 200, 0.05)',
+  'Arcane': 'rgba(255, 165, 0, 0.05)'
+};
+
+portfolioCards.forEach(card => {
+  const title = card.querySelector('h5');
+  const projectName = title.textContent;
+
+  card.addEventListener('mouseenter', () => {
+    card.style.transition =
+        'transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease';
+    card.style.transform = 'translateY(-8px)';
+    card.style.backgroundColor =
+        hoverColors[projectName] || 'rgba(18,18,31,0.05)';
+    card.style.boxShadow = '0 18px 40px rgba(0,0,0,0.45)';
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'translateY(0)';
+    card.style.backgroundColor = '#12121f';
+    card.style.boxShadow = '0 10px 30px rgba(0,0,0,0.35)';
+  });
+
+  title.style.cursor = 'pointer';
+  title.addEventListener('click', () => {
+    portfolioSection.style.transition = 'background-color 0.4s ease';
+    portfolioSection.style.backgroundColor =
+        colors[projectName] || 'rgba(18,18,31,0.1)';
   });
 });

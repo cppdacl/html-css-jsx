@@ -127,6 +127,35 @@ body {
     color: #b0b0c2;
 }
 
+.portfolio-card {
+    position: relative;
+    background: #12121f;
+    border-radius: 12px;
+    padding: 20px;
+    color: #e5e5e5;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    background-color: rgb(16, 13, 26);
+    border-radius: 12px;
+    padding: 2px;
+}
+
+.project-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
 .tech-tags {
     display: flex;
     flex-wrap: wrap;
