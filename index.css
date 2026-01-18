@@ -1,3 +1,72 @@
 body {
-    
+    background-color: rgb(15, 14, 26);
+}
+
+.navbar {
+    background: rgba(12, 11, 20, 0.85) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-link {
+    position: relative;
+    font-weight: 500;
+    color: #ddd !important;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #fff !important;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #690dfd; 
+    transition: all 0.25s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: #fff !important;
+}
+
+body {
+    background-color: rgb(15, 14, 26);
+    padding-top: 72px;
+}
+
+.section {
+    min-height: 100vh;
+    padding: 80px 0;
+}
+
+.card {
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+footer {
+    background: #0c0b14;
+    color: rgb(78, 80, 104);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.78rem;
+    text-align: center;
 }
