@@ -85,6 +85,68 @@ body {
     z-index: 1;
 }
 
+.portfolio-card {
+    background: #12121f;
+    border-radius: 8px;
+    padding: 20px;
+    color: #e5e5e5;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
+
+.portfolio-card h5 {
+    margin-bottom: 4px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.portfolio-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #9696b4;
+}
+
+.text-muted {
+    color: rgb(77, 73, 102) !important;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.tech-tags span {
+    background: #1c1a30;
+    color: #d7d7dc;
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.proj-action-btn {
+    display: inline-block;
+    margin-top: 14px;
+    background: #ffffff;
+    color: #000;
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.proj-action-btn:hover {
+    opacity: 0.85;
+}
+
 #contact {
     background-color: #0c0b14;
 }
