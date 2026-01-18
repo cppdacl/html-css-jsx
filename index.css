@@ -85,9 +85,12 @@ body {
     z-index: 1;
 }
 
+#contact {
+    background-color: #0c0b14;
+}
 
 footer {
-    background: #0c0b14;
+    background: #000000;
     color: rgb(78, 80, 104);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 0.78rem;
