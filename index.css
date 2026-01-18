@@ -80,7 +80,7 @@ body {
 }
 
 .btn-neon {
-    background: #690dfd;
+    background: #1a1b2c;
     color: #fff;
     font-weight: 600;
     padding: 10px 24px;
@@ -141,24 +141,29 @@ body {
     padding: 4px 8px;
     border-radius: 6px;
 }
-
 .proj-action-btn {
     display: inline-block;
     margin-top: 12px;
-    background: #fff;
-    color: #000;
+    background: #1a1b2c;
+    color: #fff;
     font-weight: 600;
     font-size: 0.75rem;
-    padding: 6px 10px;
-    border-radius: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
     text-decoration: none;
+    box-shadow: 0 4px 12px rgba(105, 13, 253, 0.4);
     transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #690dfd;
 }
 
 .proj-action-btn:hover {
-    opacity: 0.85;
+    background: #2b2a40;
+    box-shadow: 0 6px 20px rgba(105, 13, 253, 0.6);
     transform: translateY(-2px);
+    color: #fff;
 }
+
 
 #contact {
     background-color: #0c0b14;
@@ -218,4 +223,183 @@ footer {
 
 .text-muted {
     color: rgb(76 81 115 / 75%) !important;
+}
+
+.toast-container {
+    position: fixed;
+    bottom: 20px;      
+    left: 20px;        
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast-notify {
+    background: #0e0f1a;
+    color: #fff;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    transform: translateX(-120%);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.toast-notify.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.toast-notify.hide {
+    transform: translateX(-120%);
+    opacity: 0;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0 12px;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .portfolio-card {
+        padding: 16px;
+    }
+
+    .portfolio-card h5 {
+        font-size: 1.1rem;
+    }
+
+    .portfolio-card p {
+        font-size: 0.85rem;
+    }
+
+    .tech-tags span {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .contact-form .form-control {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+
+    .contact-btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+
+    .btn-neon {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+
+    .hero-bg {
+        opacity: 0.25;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 50px 0;
+    }
+
+    .portfolio-card {
+        padding: 12px;
+    }
+
+    .portfolio-card p {
+        font-size: 0.8rem;
+    }
+
+    .btn-neon {
+        padding: 6px 16px;
+        font-size: 0.85rem;
+    }
+
+    .contact-form {
+        padding: 16px;
+    }
+
+    .contact-form .form-control {
+        font-size: 0.75rem;
+        padding: 6px 8px;
+    }
+
+    .contact-btn {
+        padding: 6px 14px;
+        font-size: 0.75rem;
+    }
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 11, 20, 0.85);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-content {
+    background: #12121f;
+    padding: 24px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    color: #e5e5e5;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.show .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 1.3rem;
+    color: #fff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: #690dfd;
+}
+
+.modal-header {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.modal-body {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
 }
