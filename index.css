@@ -1,10 +1,20 @@
+::-moz-selection { 
+  color: rgb(255, 255, 255);
+  background: rgb(16, 58, 71);
+}
+
+::selection {
+  color: rgb(255, 255, 255);
+  background: rgb(16, 58, 71);
+}
+
 body {
     background-color: rgb(15, 14, 26);
-    padding-top: 72px;
+    padding-top: 0px;
 }
 
 .navbar {
-    background: rgba(12, 11, 20, 0.85) !important;
+    background: rgba(12, 11, 20, 0.50) !important;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
@@ -47,7 +57,7 @@ body {
 }
 
 .section {
-    min-height: 92vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;     
     justify-content: center;  
